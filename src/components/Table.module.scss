@@ -1,0 +1,36 @@
+.table {
+	border: 1px black solid;
+	text-align: center;
+	max-width: 1400px;
+
+	.content {
+		margin: 10px;
+		border: 1px solid rgb(21, 225, 86);
+
+		.headerContent {
+			background-color: darkgrey;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr) 150px 150px;
+			border: black;
+			& div {
+				border-right: 1px solid red;
+				&:last-child {
+					border: 1px solid transparent;
+				}
+			}
+		}
+		.bodyContent {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr) 150px 150px;
+			grid-template-rows: 1fr;
+
+			& div {
+				margin: 0 0px;
+				overflow: auto;
+			}
+			.id {
+				border: yellow 1px solid;
+			}
+		}
+	}
+}
