@@ -46,4 +46,5 @@ export type GoodsType = {
 	gcurrency: string
 	picture_url: string
 	sum: number
+	numberOfGoods: number
 }

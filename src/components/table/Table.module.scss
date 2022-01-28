@@ -5,7 +5,8 @@
 
 	.content {
 		margin: 10px;
-		border: 1px solid rgb(21, 225, 86);
+		border: 1px solid rgb(89, 146, 127);
+		border-radius: 5px;
 
 		.headerContent {
 			background-color: darkgrey;
@@ -13,7 +14,7 @@
 			grid-template-columns: repeat(3, 1fr) 150px 150px;
 			border: black;
 			& div {
-				border-right: 1px solid red;
+				border-right: 1px solid black;
 				&:last-child {
 					border: 1px solid transparent;
 				}
@@ -22,14 +23,19 @@
 		.bodyContent {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr) 150px 150px;
-			grid-template-rows: 1fr;
+			grid-template-rows: 30px;
+			justify-items: center;
 
 			& div {
 				margin: 0 0px;
 				overflow: auto;
 			}
-			.id {
-				border: yellow 1px solid;
+			& input {
+				width: 50px;
+				border: none;
+				& :hover {
+					border: none;
+				}
 			}
 		}
 	}

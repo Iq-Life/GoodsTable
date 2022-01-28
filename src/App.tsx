@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { FC, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import style from './App.module.scss';
-import { Table } from './components/Table';
+import { Footer } from './components/footer/Footer';
+import { Table } from './components/table/Table';
 
-function App() {
-
+const App: FC = () => {
 
 	const dispatch = useDispatch()
 
@@ -12,10 +12,10 @@ function App() {
 		dispatch({ type: 'FETCH' })
 	}, [])
 
-
 	return (
 		<div className={style.App}>
 			<Table />
+			<Footer />
 		</div>
 	);
 }
