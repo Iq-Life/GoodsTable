@@ -26,7 +26,6 @@ export const Table: FC = () => {
 					sumGoodsAndAllSum={(gId, num) => sumGoodsAndAllSum(product.rid, gId, num)}
 				/>
 			)}
-
 		</div>
 	))
 

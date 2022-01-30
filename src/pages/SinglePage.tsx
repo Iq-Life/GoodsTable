@@ -21,10 +21,7 @@ export const SinglePage: FC = () => {
 		dispatch(sumAC(pId, gId, num))
 	}
 
-
-
 	const filteredProducts = state.products.filter(product => product.rid === id)
-	console.log(filteredProducts);
 
 	return (
 		<div className={style.page}>
