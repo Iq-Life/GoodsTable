@@ -13,14 +13,21 @@ export function* fitchProducts() {
 	yield put({ type: "SET_GOODS", payload: products })
 }
 
+function* postPurchase() {
+
+}
 ////////////////////////////////////////////////////////////////////////////////////
 
 export function* workerSaga() {
 	yield fork(fitchProducts)
 }
+export function* workerSag() {
+
+}
 
 export function* watchLoadDataSaga() {
 	yield takeEvery('FETCH', workerSaga)
+	yield takeEvery('IN_GARBAGE', workerSag)
 }
 
 

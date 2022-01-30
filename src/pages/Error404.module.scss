@@ -1,0 +1,12 @@
+.errorPage {
+  background: white url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/pd44-352-ae-1a.jpg?w=1300&dpr=1&fit=default&crop=default&q=80&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=e096e5e10c05a8c84b450b5793d0afd5') center;
+  min-height: 100vh;
+  color: black;
+  text-shadow: 0 0 3px white;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 80px;
+}

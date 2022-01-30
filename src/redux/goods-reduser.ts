@@ -3,9 +3,6 @@ import { ProductsType } from "../API/products-API"
 const multi = (price: number, num: number) => {
 	return price * num
 }
-const sum = (initialValue: number, currentValue: number) => {
-	return initialValue + currentValue
-}
 
 const initialState: StateType = {
 	products: [],
@@ -27,21 +24,18 @@ export const goodsReducer = (state: StateType = initialState, action: ActionType
 			}
 		}
 		case "SUM_GOODS_AND_ALL_SUM": {
-			console.log(state.totalNumberOfGoods = state.products.map(pr => pr.goods.reduce((acc, currentValue) => {
-				return acc + currentValue.numberOfGoods
-			}, 0)).reduce((acc, currentValue) => {
-				return acc + currentValue
-			}, 0));
-
 			return {
 				...state,
 				products: state.products.map(product => {
 					return {
 						...product,
-						goods: product.goods.filter(goods => {
+						goods: product.goods.map(goods => {
 							if (goods.gid === action.gId) {
-								goods.numberOfGoods = action.num
-								return goods.sum = multi(+goods.gprice, action.num)
+								return {
+									...goods,
+									numberOfGoods: goods.numberOfGoods = action.num,
+									sum: goods.sum = multi(+goods.gprice, action.num)
+								}
 							} else {
 								return goods
 							}
@@ -79,10 +73,3 @@ export type StateType = {
 	toPay: number
 	totalNumberOfGoods: number
 }
-
-// return {
-// 	...product, goods: product.goods.filter(goods =>
-// 		goods.gid === action.id ?
-// 			goods.sum = multi(+goods.gprice, action.num)
-// 			: goods)
-// }

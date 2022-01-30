@@ -20,19 +20,20 @@
 				}
 			}
 		}
+
 		.bodyContent {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr) 150px 150px;
 			grid-template-rows: 30px;
-			justify-items: center;
-
+			align-items: center;
 			& div {
 				margin: 0 0px;
 				overflow: auto;
 			}
 			& input {
-				width: 50px;
-				border: none;
+				width: 100px;
+				border: 1px solid gray;
+				height: 20px;
 				& :hover {
 					border: none;
 				}

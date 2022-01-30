@@ -1,0 +1,37 @@
+.content {
+	margin: 10px;
+	border: 1px solid rgb(89, 146, 127);
+	border-radius: 5px;
+
+	.headerContent {
+		background-color: darkgrey;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr) 150px 150px;
+		border: black;
+		& div {
+			border-right: 1px solid black;
+			&:last-child {
+				border: 1px solid transparent;
+			}
+		}
+	}
+
+	.bodyContent {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr) 150px 150px;
+		grid-template-rows: 30px;
+		align-items: center;
+		& div {
+			margin: 0 0px;
+			overflow: auto;
+		}
+		& input {
+			width: 100px;
+			border: 1px solid gray;
+			height: 20px;
+			& :hover {
+				border: none;
+			}
+		}
+	}
+}

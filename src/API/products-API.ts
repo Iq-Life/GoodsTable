@@ -8,6 +8,9 @@ export const productsApi = {
 	getProducts() {
 		return instance.get<Array<ProductsType>>('junior_task/get_products.php').then(res => res.data)
 	}
+	// postPurchase() {
+	// 	return instance.post<any,any>('junior_task/add_basket.php')
+	// }
 }
 
 export type ProductsType = {
@@ -47,4 +50,10 @@ export type GoodsType = {
 	picture_url: string
 	sum: number
 	numberOfGoods: number
+}
+export type FormDataType = {
+	success: boolean
+	data: {
+		[key: string]: string
+	}
 }
