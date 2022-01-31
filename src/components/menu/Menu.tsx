@@ -8,16 +8,15 @@ import style from './Menu.module.scss'
 
 
 
-export const Menu: FC<MenuType> = ({
-	active, setActive
-}) => {
+export const Menu: FC = () => {
 
 	const state = useSelector((state: AppStateType): StateType => state.goodsReducer)
+	const [active, setActive] = useState(false)
 
 	const mapNameProducts = state.products.map(product => {
 		return (
 			<li>
-				<NavLink key={product.rid} to={`/${product.rid}`} className={style.menuLink}>{product.rname}</NavLink>
+				<NavLink key={product.rid} to={`/${product.urlalias}`} className={style.menuLink}>{product.rname}</NavLink>
 			</li>
 		)
 	})
@@ -43,9 +42,4 @@ export const Menu: FC<MenuType> = ({
 
 		</div>
 	);
-}
-
-type MenuType = {
-	active: boolean
-	setActive: (value: boolean) => void
 }

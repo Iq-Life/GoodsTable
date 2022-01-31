@@ -1,31 +1,31 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom"
-import { ProductsType } from "../API/products-API";
+import { useParams } from "react-router-dom";
+import { Footer } from "../components/footer/Footer";
 import { Menu } from "../components/menu/Menu";
 import { Goods } from "../components/table/goods/Goods";
 import { StateType, sumAC } from "../redux/goods-reduser";
 import { AppStateType } from "../redux/redux-store";
-import style from "./SinglePage.module.scss"
+import style from "./SinglePage.module.scss";
 
 
 
 export const SinglePage: FC = () => {
 
-	const { id } = useParams()
+	const { urlalias } = useParams()
 	const state = useSelector((state: AppStateType): StateType => state.goodsReducer)
 	const dispatch = useDispatch()
-	const [menuActive, setMenuActive] = useState(false)
+
 
 	const sumGoodsAndAllSum = (pId: string, gId: string, num: number) => {
 		dispatch(sumAC(pId, gId, num))
 	}
 
-	const filteredProducts = state.products.filter(product => product.rid === id)
+	const filteredProducts = state.products.filter(product => product.urlalias === urlalias)
 
 	return (
 		<div className={style.page}>
-			<Menu active={menuActive} setActive={setMenuActive} />
+			<Menu />
 			<div className={style.table}>
 				<div key={filteredProducts[0].rid}>
 					<h1>{filteredProducts[0].rname}</h1>
@@ -37,6 +37,7 @@ export const SinglePage: FC = () => {
 					)}
 				</div>
 			</div>
+			<Footer />
 		</div>
 	)
 }

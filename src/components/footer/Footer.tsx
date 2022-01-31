@@ -9,8 +9,13 @@ export const Footer: FC = () => {
 	const dispatch = useDispatch()
 
 	const handlClick = () => {
-		dispatch({ type: 'IN_GARBAGE' })
+		// const formData = new FormData()
+		// formData.append(`product[${id}]`,value)
+
+		// dispatch({ type: 'IN_GARBAGE', formData:  })
 	}
+
+
 
 	return (
 		<div>{state.toPay || state.totalNumberOfGoods ?

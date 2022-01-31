@@ -1,6 +1,7 @@
 import React, { ChangeEvent, FC, useState } from "react";
 import { useDispatch } from "react-redux";
 import { GoodsType } from "../../../API/products-API";
+import { StateType } from "../../../redux/goods-reduser";
 import style from "./Goods.module.scss";
 
 export const Goods: FC<ComponentGoods> = ({
@@ -8,7 +9,7 @@ export const Goods: FC<ComponentGoods> = ({
 }) => {
 
 	const dispatch = useDispatch()
-	const [number, setNumber] = useState(0)
+	const [number, setNumber] = useState(goods.numberOfGoods)
 
 	const onFocus = (e: ChangeEvent<HTMLInputElement>) => {
 		e.target.select()
