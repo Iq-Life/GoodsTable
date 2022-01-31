@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ProductsType } from "../../API/products-API";
 import { StateType, sumAC } from "../../redux/goods-reduser";
@@ -17,14 +17,16 @@ export const Table: FC = () => {
 	}
 
 
-	const productsMap = state.products.map((product: ProductsType) => (
-		<div key={product.rid}>
+	const productsMap = state.products.map((product: ProductsType, index) => (
+		<div key={index}>
 			<h1>{product.rname}</h1>
-			{product.goods.map(goods =>
-				<Goods
-					goods={goods}
-					sumGoodsAndAllSum={(gId, num) => sumGoodsAndAllSum(product.rid, gId, num)}
-				/>
+			{product.goods.map((goods, ind) =>
+				<React.Fragment key={ind}>
+					<Goods
+						goods={goods}
+						sumGoodsAndAllSum={(gId, num) => sumGoodsAndAllSum(product.rid, gId, num)}
+					/>
+				</React.Fragment>
 			)}
 		</div>
 	))

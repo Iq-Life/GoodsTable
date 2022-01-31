@@ -1,7 +1,6 @@
-import React, { ChangeEvent, FC, useState } from "react";
+import React, { ChangeEvent, FC, memo, useState } from "react";
 import { useDispatch } from "react-redux";
 import { GoodsType } from "../../../API/products-API";
-import { StateType } from "../../../redux/goods-reduser";
 import style from "./Goods.module.scss";
 
 export const Goods: FC<ComponentGoods> = ({
@@ -47,6 +46,7 @@ export const Goods: FC<ComponentGoods> = ({
 		</main>
 	)
 }
+
 type ComponentGoods = {
 	goods: GoodsType
 	sumGoodsAndAllSum: (gId: string, num: number) => void

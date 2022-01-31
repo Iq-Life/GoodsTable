@@ -16,7 +16,6 @@ export const SinglePage: FC = () => {
 	const state = useSelector((state: AppStateType): StateType => state.goodsReducer)
 	const dispatch = useDispatch()
 
-
 	const sumGoodsAndAllSum = (pId: string, gId: string, num: number) => {
 		dispatch(sumAC(pId, gId, num))
 	}

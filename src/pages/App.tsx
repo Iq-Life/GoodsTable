@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { Footer } from '../components/footer/Footer';
 import { Menu } from '../components/menu/Menu';

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { Route, Routes } from "react-router-dom";
 import App from './App';
 import Error404 from './Error404';
 import { SinglePage } from './SinglePage';
-import { useDispatch } from 'react-redux';
 
 
 export const PATH = {

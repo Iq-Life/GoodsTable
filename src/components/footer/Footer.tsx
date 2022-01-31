@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { StateType } from "../../redux/goods-reduser";
 import { AppStateType } from "../../redux/redux-store";
-import styled from './Footer.module.scss'
+import styled from './Footer.module.scss';
 
 export const Footer: FC = () => {
 	const state = useSelector((state: AppStateType): StateType => state.goodsReducer)
